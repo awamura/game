@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7123edb3cd0bbf547b091afe01ca323b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeM: {fileID: 100006, guid: f2e081a193f6ecd4e956fd53603baef9, type: 2}
+  cubeM: {fileID: 100002, guid: f2e081a193f6ecd4e956fd53603baef9, type: 2}
   cubeL: {fileID: 100002, guid: 99fff4d1b1e244949bd23fc02e58d847, type: 2}
   spawnMode: 1
   spawnModeView: {fileID: 0}
