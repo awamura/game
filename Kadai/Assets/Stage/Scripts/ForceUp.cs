@@ -8,8 +8,9 @@ public class ForceUp : MonoBehaviour {
 	void Update() {
 		RaycastHit hit;
 		if (Physics.Raycast(transform.position, Vector3.up, out hit, 1)) {
-
-			Debug.Log ("add force ray");
+			Character script = GameObject.Find("BigHeads").GetComponent<Character>();
+			script.Jump();
+			Debug.Log ("Jump");
 		}
 	}
 }

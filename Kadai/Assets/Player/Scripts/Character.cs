@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class Character : MonoBehaviour {
-	public float SPEED = 1F;
+	public float SPEED = 3F;
 	public float ROTATE_SPEED = 2F;
 	public float GRAVITY = 0.1F;
+	public float JUMP_POWER = 50F;
 
 	Animator animator;
 	CharacterController character;
@@ -69,6 +70,6 @@ public class Character : MonoBehaviour {
 	}
 
 	public void Jump(){
-		velocity.y = 2F;
+		velocity.y = JUMP_POWER;
 	}
 }
