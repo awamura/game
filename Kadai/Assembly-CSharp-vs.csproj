@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Enemy.cs" />
      <Compile Include="Assets\GameController.cs" />
      <Compile Include="Assets\Opening\StartGUI.cs" />
      <Compile Include="Assets\Player\Scripts\Character.cs" />
