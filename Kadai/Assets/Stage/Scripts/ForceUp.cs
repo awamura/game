@@ -5,9 +5,11 @@ public class ForceUp : MonoBehaviour {
 
 	public float power;
 
-	void OnCollisionEnter(Collision collision) {
-		GameObject targetObject = collision.gameObject;
-		targetObject.rigidbody.AddForce (Vector3.up.normalized * power, ForceMode.VelocityChange);
-		Debug.Log ("add force");
+	void Update() {
+		RaycastHit hit;
+		if (Physics.Raycast(transform.position, Vector3.up, out hit, 1)) {
+
+			Debug.Log ("add force ray");
+		}
 	}
 }
