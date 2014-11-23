@@ -46,7 +46,19 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Character.cs" />
+     <Compile Include="Assets\GameController.cs" />
+     <Compile Include="Assets\Opening\StartGUI.cs" />
+     <Compile Include="Assets\Player\Scripts\Character.cs" />
+     <Compile Include="Assets\Stage\Scripts\ForceUp.cs" />
+     <Compile Include="Assets\Stage\Scripts\SpawnCube.cs" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\BigHeads\BigHead Starter\Shader\Outlined Diffuse.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{41724F1F-B29D-FBBE-C95F-C09BB4FE0512}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{D5644144-9D56-1308-6796-94B8AA83C0B4}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
