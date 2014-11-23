@@ -46,8 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Character.cs" />
-     <Compile Include="Assets\Stage\SpawnCube.cs" />
+     <Compile Include="Assets\GameController.cs" />
+     <Compile Include="Assets\Opening\StartGUI.cs" />
+     <Compile Include="Assets\Player\Scripts\Character.cs" />
+     <Compile Include="Assets\Stage\Scripts\ForceUp.cs" />
+     <Compile Include="Assets\Stage\Scripts\SpawnCube.cs" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\BigHeads\BigHead Starter\Shader\Outlined Diffuse.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/certpro_0009/Documents/game/Kadai/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>

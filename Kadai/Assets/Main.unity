@@ -223,6 +223,7 @@ MonoBehaviour:
   SPEED: 1
   ROTATE_SPEED: 2
   GRAVITY: 1
+  JUMP_POWER: 50
 --- !u!143 &890339353
 CharacterController:
   m_ObjectHideFlags: 0
