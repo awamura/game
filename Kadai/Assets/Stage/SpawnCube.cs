@@ -2,9 +2,13 @@
 using System.Collections;
 
 public class SpawnCube : MonoBehaviour {
-	
-	public GameObject cube;
+
+	/** generating cube object */
+	public GameObject cubeM;
+	/** generating large cube object */
 	public GameObject cubeL;
+	/** spawn mode */
+	public int spawnMode = 1;
 
 	private Vector3 clickPosition;
 
@@ -20,8 +24,9 @@ public class SpawnCube : MonoBehaviour {
 			clickPosition.z = 10f;
 			StartCoroutine("CreateCube", clickPosition);
 		}
-	}
 
+
+	}
 
 	IEnumerator CreateCube(Vector3 clickPos) {
 
@@ -29,9 +34,22 @@ public class SpawnCube : MonoBehaviour {
 		vec.x = Mathf.Round(vec.x);
 		vec.y = Mathf.Round(vec.y);
 
-		Instantiate (cube, vec, cube.transform.rotation);
+		GameObject targetCube;
+		if (spawnMode == 1) {
+			Ray ray = Camera.main.ScreenPointToRay(clickPos);
+			if (!Physics.Raycast(ray)) {
+				targetCube = cubeM;
+				Instantiate (targetCube, vec, targetCube.transform.rotation);
+				yield return null;
+			}
+		} else {
+			Ray firstStepRay = Camera.main.ScreenPointToRay(clickPos);
+			Ray secondStepRay = Camera.main.ScreenPointToRay(new Vector3(clickPos.x, clickPos.y + 50, clickPos.z));
+			if (!Physics.Raycast(firstStepRay) && !Physics.Raycast(secondStepRay)) {
+				targetCube = cubeL;
+				Instantiate (targetCube, vec, targetCube.transform.rotation);
+			}
+		}
 		yield return null;
 	}
-
-	
 }
