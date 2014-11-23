@@ -7,6 +7,7 @@ public class Character : MonoBehaviour {
 	public float GRAVITY = 0.1F;
 	public float JUMP_POWER = 50F;
 	public float CHIMNEY_SPEED = 5F;
+	public float ENEMY_POWER = 30F;
 
 	Animator animator;
 	CharacterController character;
@@ -83,7 +84,7 @@ public class Character : MonoBehaviour {
 			}
 		}
 		if (hit.gameObject.tag == "enemy") {
-			velocity.y = 10;
+			velocity.y = ENEMY_POWER;
 		}
 	}
 
