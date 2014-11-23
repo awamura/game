@@ -1366,6 +1366,53 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1419249031}
   m_GameObject: {fileID: 551300206}
   m_Mesh: {fileID: 4300004, guid: 3905ef5b9f8cd42748a77f2c1a1995aa, type: 3}
+--- !u!1 &740843823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 740843825}
+  - 131: {fileID: 740843824}
+  m_Layer: 0
+  m_Name: UnityWatermark-small
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &740843824
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 740843823}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: 3b030dc9082a09c438fb05d92bbc039e, type: 3}
+  m_Color: {r: .525490224, g: .525490224, b: .525490224, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -264.200012
+    y: -78
+    width: 500
+    height: 250
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &740843825
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 740843823}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &779697271
 GameObject:
   m_ObjectHideFlags: 0

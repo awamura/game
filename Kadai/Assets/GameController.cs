@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		texClear.enabled = false;
+		texFaild.enabled = false;
 	}
 	
 	// Update is called once per frame
