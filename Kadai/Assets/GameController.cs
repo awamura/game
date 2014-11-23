@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		texClear.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void GameClear() {
+		print ("aaa");
 		texClear.enabled = true;
 		isStageEnd = true;
 	}

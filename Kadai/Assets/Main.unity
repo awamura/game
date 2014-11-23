@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SPEED: 1
   ROTATE_SPEED: 2
-  GRAVITY: 200
+  GRAVITY: 1
 --- !u!143 &890339353
 CharacterController:
   m_ObjectHideFlags: 0
@@ -316,6 +316,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 945a0c4ffafa7f54f871832af7df7fc4, type: 2}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 945a0c4ffafa7f54f871832af7df7fc4, type: 2}
+      propertyPath: GRAVITY
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -736,7 +740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!131 &1853258527
 GUITexture:
   m_ObjectHideFlags: 0
@@ -984,7 +988,7 @@ GameObject:
   - 65: {fileID: 2027648159}
   m_Layer: 0
   m_Name: House_C_Chimney
-  m_TagString: Untagged
+  m_TagString: chimney
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

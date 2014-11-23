@@ -4,12 +4,12 @@ using System.Collections;
 public class Character : MonoBehaviour {
 	public float SPEED = 1F;
 	public float ROTATE_SPEED = 2F;
-	public float GRAVITY = 200F;
+	public float GRAVITY = 0.1F;
 
 	Animator animator;
 	CharacterController character;
+	GameObject gameController;
 
-	private float beforePositionZ;
 	private float speedX;
 	private bool isRotateMode;
 	private float beforeRotate;
@@ -20,17 +20,17 @@ public class Character : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		beforePositionZ =  transform.position.z;
 		speedX = SPEED;
 		
 		animator = GetComponent<Animator>();
 		character = GetComponent<CharacterController>();
+		gameController = GameObject.Find ("GameController");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Mathf.Abs (speedX) > 0.001) {
-			velocity = new Vector3(0, 0, speedX);
+			velocity.z = speedX;
 			animator.SetFloat("Speed", Mathf.Abs (speedX));
 		}
 
@@ -49,18 +49,26 @@ public class Character : MonoBehaviour {
 			}
 		} else {
 			if ((flag & CollisionFlags.Sides) == CollisionFlags.Sides) {
-				startRorate();
+				StartRorate();
 			}
 		}
-		
-		beforePositionZ = transform.position.z;
 	}
 
-	private void startRorate() {
+	private void StartRorate() {
 		isRotateMode = true;
 
 		beforeRotate = transform.rotation.y;
 		speedX = 0;
 		animator.SetFloat("Speed", 0.1F);
+	}
+
+	void OnControllerColliderHit(ControllerColliderHit hit){
+		if (hit.gameObject.tag == "chimney") {
+			gameController.SendMessage("GameClear");
+		}
+	}
+
+	public void Jump(){
+		velocity.y = 2F;
 	}
 }
