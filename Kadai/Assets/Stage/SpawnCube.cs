@@ -41,8 +41,8 @@ public class SpawnCube : MonoBehaviour {
 	IEnumerator CreateCube(Vector3 clickPos) {
 
 		Vector3 vec = Camera.main.ScreenToWorldPoint (clickPos);
-		vec.x = Mathf.Round(vec.x);
 		vec.y = Mathf.Round(vec.y);
+		vec.z = Mathf.Round(vec.z);
 
 		GameObject targetCube;
 		if (spawnMode == 1) {
