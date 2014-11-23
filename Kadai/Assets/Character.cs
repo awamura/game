@@ -30,7 +30,7 @@ public class Character : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Mathf.Abs (speedX) > 0.001) {
-			velocity = new Vector3(0, 0, speedX);
+			velocity = new Vector3(speedX, 0, 0);
 			animator.SetFloat("Speed", Mathf.Abs (speedX));
 		}
 
