@@ -18,9 +18,10 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void GameClear() {
-		print ("aaa");
-		texClear.enabled = true;
-		isStageEnd = true;
+		if (!isStageEnd) {
+			texClear.enabled = true;
+			isStageEnd = true;
+		}
 	}
 
 	public void GameFaild() {

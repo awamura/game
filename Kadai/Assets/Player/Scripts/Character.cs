@@ -6,6 +6,7 @@ public class Character : MonoBehaviour {
 	public float ROTATE_SPEED = 2F;
 	public float GRAVITY = 0.1F;
 	public float JUMP_POWER = 50F;
+	public float CHIMNEY_SPEED = 5F;
 
 	Animator animator;
 	CharacterController character;
@@ -14,6 +15,8 @@ public class Character : MonoBehaviour {
 	private float speedX;
 	private bool isRotateMode;
 	private float beforeRotate;
+	private float beforePositionY;
+	private bool goal;
 
 	Vector3 velocity;
 
@@ -26,10 +29,18 @@ public class Character : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		character = GetComponent<CharacterController>();
 		gameController = GameObject.Find ("GameController");
+
+		goal = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (goal) {
+			if (beforePositionY - 3F < transform.position.y) {
+				transform.Translate(0, -CHIMNEY_SPEED * Time.deltaTime, 0);
+			}
+			return;
+		}
 		if (Mathf.Abs (speedX) > 0.001) {
 			velocity.z = speedX;
 			animator.SetFloat("Speed", Mathf.Abs (speedX));
@@ -66,10 +77,25 @@ public class Character : MonoBehaviour {
 	void OnControllerColliderHit(ControllerColliderHit hit){
 		if (hit.gameObject.tag == "chimney") {
 			gameController.SendMessage("GameClear");
+			float distance = Mathf.Abs(hit.gameObject.transform.position.z - 3.3f - transform.position.z);
+			if (distance < 0.01) {
+				Goal();
+			}
+		}
+		if (hit.gameObject.tag == "enemy") {
+			velocity.y = 10;
 		}
 	}
 
 	public void Jump(){
 		velocity.y = JUMP_POWER;
+	}
+	
+	public void Goal(){
+		speedX = 0;
+		velocity.z = 0;
+		animator.SetFloat("Speed", 0.0F);
+		beforePositionY = transform.position.y;
+		goal = true;
 	}
 }
