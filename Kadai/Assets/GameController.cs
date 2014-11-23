@@ -24,8 +24,11 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	public void GameFaild() {
-		texFaild.enabled = true;
-		isStageEnd = true;
+	public void GameOver() {
+		if (!isStageEnd) {
+			print ("bbbb");
+			texFaild.enabled = true;
+			isStageEnd = true;
+		}
 	}
 }

@@ -76,13 +76,13 @@ public class Character : MonoBehaviour {
 
 	void OnControllerColliderHit(ControllerColliderHit hit){
 		if (hit.gameObject.tag == "chimney") {
-			gameController.SendMessage("GameClear");
 			float distance = Mathf.Abs(hit.gameObject.transform.position.z - 3.3f - transform.position.z);
 			if (distance < 0.01) {
 				Goal();
 			}
 		}
 		if (hit.gameObject.tag == "enemy") {
+			gameController.SendMessage("GameOver");
 			velocity.y = 10;
 		}
 	}
@@ -96,6 +96,7 @@ public class Character : MonoBehaviour {
 		velocity.z = 0;
 		animator.SetFloat("Speed", 0.0F);
 		beforePositionY = transform.position.y;
+		gameController.SendMessage("GameClear");
 		goal = true;
 	}
 }
