@@ -10,7 +10,11 @@ public class SpawnCube : MonoBehaviour {
 	/** spawn mode */
 	public int spawnMode = 1;
 
+	public GUIText spawnModeView;
+
 	private Vector3 clickPosition;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +29,13 @@ public class SpawnCube : MonoBehaviour {
 			StartCoroutine("CreateCube", clickPosition);
 		}
 
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {
+			spawnMode = 1;
+		} else if (Input.GetKeyDown (KeyCode.Alpha2)) {
+			spawnMode = 2;	
+		}
 
+		spawnModeView.text = "SpawnMode:" + spawnMode;
 	}
 
 	IEnumerator CreateCube(Vector3 clickPos) {
